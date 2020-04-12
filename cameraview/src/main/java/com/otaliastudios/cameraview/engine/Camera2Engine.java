@@ -19,6 +19,7 @@ import android.location.Location;
 import android.media.Image;
 import android.media.ImageReader;
 import android.os.Build;
+import android.util.Log;
 import android.util.Pair;
 import android.util.Range;
 import android.util.Rational;
@@ -121,6 +122,23 @@ public class Camera2Engine extends CameraBaseEngine implements
         mManager = (CameraManager) getCallback().getContext()
                 .getSystemService(Context.CAMERA_SERVICE);
         new LogAction().start(this);
+//
+//        try {
+//            String curTag = Camera2Engine.class.getSimpleName();
+//            for (String streamId: mManager.getCameraIdList()) {
+//                CameraCharacteristics chars
+//                        = mManager.getCameraCharacteristics(streamId);
+//                Log.d(curTag, "Camera Stream Id = " + streamId);
+//
+//                Integer facing = chars.get(CameraCharacteristics.LENS_FACING);
+//                Log.d(curTag, "facing = " + facing);
+//                if (facing != null && facing == CameraCharacteristics.LENS_FACING_FRONT) {
+//                    Log.d(curTag, "This is front camera!!!");
+//                }
+//            }
+//        } catch (CameraAccessException e) {
+//            e.printStackTrace();
+//        }
     }
 
     //region Utilities
